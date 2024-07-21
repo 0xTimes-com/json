@@ -12,8 +12,7 @@ export default function Card(props: Page) {
 
   // parse site.com+hello-world.html to hello world
   const title = props.source
-    .split("+")[1]
-    .split(".html")[0]
+    .substring(props.source.indexOf("+") + 1, props.source.indexOf(".html"))
     .replace(/[/-]/g, " ")
     .trim();
 
