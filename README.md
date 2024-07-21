@@ -1,7 +1,43 @@
-# List of Company Logos
+# 0xTimes.com
+
+## Getting Started
+
+```bash
+npm install
+npm run dev
+```
+
+## Page Contribution
+
+To add pages, in `public/html` add a `.html` file with the naming convention
+
+```
+<HOST_URL>+<Article-Name-With-Hyphens>.html>
+or
+filecoin.io+Why-Filecoin-is-Changing-Storage-Ecosystem.html
+```
+
+## Image Contribution
+
+To add logos, edit `public/json/logos.json`
+
+- The key is the host url
+- The value is the base64
 
 ```JSON
 {
-    "filecoin.io": "data:image/svg+xml;base64,PHN2ZyB2ZXJzaW9uPSIxLjEiIGlkPSJMYXllcl8xIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHg9IjAiIHk9IjAiIHZpZXdCb3g9IjAgMCA0MCA0MCIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSIgZW5hYmxlLWJhY2tncm91bmQ9Im5ldyAwIDAgNDAgNDAiPgogICAgPHN0eWxlPgogICAgLnN0MS1sb2dvIHsKICAgICAgICBmaWxsLXJ1bGU6IGV2ZW5vZGQ7CiAgICAgICAgY2xpcC1ydWxlOiBldmVub2RkOwogICAgICAgIGZpbGw6ICNmZmYKICAgIH0KICAgIDwvc3R5bGU+CiAgICA8ZGVmcz4KICAgICAgICA8ZmlsdGVyIGlkPSJhLWxvZ28iIGZpbHRlclVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeD0iMCIgeT0iMCIgd2lkdGg9IjQwIiBoZWlnaHQ9IjQwIj4KICAgICAgICAgICAgPGZlQ29sb3JNYXRyaXggdmFsdWVzPSIxIDAgMCAwIDAgMCAxIDAgMCAwIDAgMCAxIDAgMCAwIDAgMCAxIDAiIC8+CiAgICAgICAgPC9maWx0ZXI+CiAgICA8L2RlZnM+CiAgICA8bWFzayBtYXNrVW5pdHM9InVzZXJTcGFjZU9uVXNlIiB4PSIwIiB5PSIwIiB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIGlkPSJiLWxvZ29fMSI+CiAgICAgICAgPGcgZmlsdGVyPSJ1cmwoI2EtbG9nbykiPgogICAgICAgICAgICA8cGF0aCBpZD0iYS1sb2dvXzEiIGNsYXNzPSJzdDEtbG9nbyIgZD0iTTAgMGg0MHY0MEgwVjB6IiAvPgogICAgICAgIDwvZz4KICAgIDwvbWFzaz4KICAgIDxwYXRoIGQ9Ik0yMCA0MEM5IDQwIDAgMzEgMCAxOS45LjEgOC45IDktLjEgMjAuMSAwIDMxLjEuMSA0MCA5IDQwIDIwLjIgMzkuOSAzMS4xIDMxIDQwIDIwIDQwIiBtYXNrPSJ1cmwoI2ItbG9nb18xKSIgZmlsbC1ydWxlPSJldmVub2RkIiBjbGlwLXJ1bGU9ImV2ZW5vZGQiIGZpbGw9IiMwMDkwZmYiIC8+CiAgICA8cGF0aCBjbGFzcz0ic3QxLWxvZ28iIGQ9Ik0yMS45IDE3LjZsLS42IDMuMiA1LjcuOC0uNCAxLjUtNS42LS44Yy0uNCAxLjMtLjYgMi43LTEuMSAzLjktLjUgMS40LTEgMi44LTEuNiA0LjEtLjggMS43LTIuMiAyLjktNC4xIDMuMi0xLjEuMi0yLjMuMS0zLjItLjYtLjMtLjItLjYtLjYtLjYtLjkgMC0uNC4yLS45LjUtMS4xLjItLjEuNyAwIDEgLjEuMy4zLjYuNy44IDEuMS42LjggMS40LjkgMi4yLjMuOS0uOCAxLjQtMS45IDEuNy0zIC42LTIuNCAxLjItNC43IDEuNy03LjF2LS40bC01LjMtLjguMi0xLjUgNS41LjguNy0zLjEtNS43LS45LjItMS42IDUuOS44Yy4yLS42LjMtMS4xLjUtMS42LjUtMS44IDEtMy42IDIuMi01LjIgMS4yLTEuNiAyLjYtMi42IDQuNy0yLjUuOSAwIDEuOC4zIDIuNCAxIC4xLjEuMy4zLjMuNSAwIC40IDAgLjktLjMgMS4yLS40LjMtLjkuMi0xLjMtLjItLjMtLjMtLjUtLjYtLjgtLjktLjYtLjgtMS41LS45LTIuMi0uMi0uNS41LTEgMS4yLTEuMyAxLjktLjcgMi4xLTEuMiA0LjMtMS45IDYuNWw1LjUuOC0uNCAxLjUtNS4zLS44IiAvPgo8L3N2Zz4="
+    <HOST_URL>: <BASE_64>,
+    "filecoin.io": "data:image/png;base64,iVBORw0KGgo..."
 }
 ```
+
+## How it works
+
+On build:
+
+- A function in `src/utils/getPages.ts` will
+  - list all of the `html` files
+  - sort them by reverse chronological order
+  - then return the list as `Page[]`
+- `src/app/page.tsx` will get `Page[]` to display each `Card`
+- `src/components/Card.tsx` will render and style the individual card
