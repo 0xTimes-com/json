@@ -10,6 +10,9 @@ export default function Nav() {
           <Link href="/">Home</Link>
         </div>
         <div className="hover:underline text-xl font-bold">
+          <Link href="/list">List</Link>
+        </div>
+        <div className="hover:underline text-xl font-bold">
           <Link href="/about">About</Link>
         </div>
       </div>
