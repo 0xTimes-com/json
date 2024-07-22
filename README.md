@@ -43,3 +43,8 @@ On build:
 - `src/components/Card.tsx` will render and style the individual card
 - `<HOST_URL>` is what links `public/html` to `public/img`
   - for example `public/html/filecoin.io+cool-article.html` will have the logo from `public/img/filecoin.io.jpg`
+
+We're using n8n to automatically transfer all emails to the permanant web
+
+![](https://github.com/user-attachments/assets/f7628911-6d6b-401f-82cb-46df3e038479)
+
