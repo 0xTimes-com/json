@@ -7,13 +7,14 @@ export default function About() {
       <div className="mx-auto max-w-5xl my-5">
         <div className="text-5xl p-4">The Times</div>
         <div className="text-xl p-4">
-          The first notable use of &quot;Times&quot; in a newspaper title was
-          with &quot;The Daily Universal Register&quot; in London, which changed
-          its name to &quot;The Times&quot; in 1788. It became highly
-          influential, setting journalistic standards.
+          In 1785, John Walter founded the newspaper `The Daily Universal
+          Register`. This name was chosen to provide a wide range of information
+          to its readers. However, the name was somewhat cumbersome. Three years
+          later, the newspaper rebraded as `The Times`. The name conveys the
+          idea of timely news and information.
         </div>
         <div className="text-xl p-4">
-          Now in this era, notable organizations include:
+          Now in this era, notable `Time` organizations include:
         </div>
         <ul className="text-xl p-4">
           <li>- The New York Times</li>
@@ -23,30 +24,38 @@ export default function About() {
 
         <div className="text-5xl p-4">The 0x</div>
         <div className="text-xl p-4">
-          The prefix &quot;0x&quot; has a specific meaning in computer science
-          and mathematics, particularly in the context of number systems. 0x is
-          used to indicate that the following number is in hexadecimal (base-16)
-          format and is used in.
+          The prefix <code>0</code>x has a specific meaning in computer science.
+          0x is used to indicate a hexadecimal (base-16) number. Hexadecimal
+          provides a compact way to represent binary values. Each hexadecimal
+          digit corresponds to four binary digits (bits), making it easier to
+          read and write large binary numbers.
+        </div>
+        <div className="text-xl p-4">
+          <code>0</code>x is used in:
         </div>
         <ul className="text-xl p-4">
           <li>
-            - EVM addresses. &quot;0x&quot; followed by 40 hexadecimal
+            - EVM addresses. <code>0</code>x followed by 40 hexadecimal
             characters.
           </li>
           <li>
-            - Smart contract functions: “0x” followed by the first 4 bytes of
-            the hash of the function.
+            - Smart contract functions: “<code>0</code>x” followed by the first
+            4 bytes of the hash of the function.
           </li>
         </ul>
 
-        <div className="text-5xl p-4">0xTimes</div>
+        <div className="text-5xl p-4">
+          The <code>0</code>xTimes
+        </div>
         <div className="text-xl p-4">
-          0xTimes archives the latest email news on blockchain technology.
+          <code>0</code>xTimes archives the latest email news on blockchain
+          technology.
         </div>
         <div className="text-xl p-4">How it works under the hood:</div>
         <ul className="text-xl p-4">
           <li>
-            - We email subscribe to the best and newest blockchain projects.
+            - We email subscribe to newsletters from the best and newest
+            blockchain projects.
           </li>
           <li>
             - For every new email, we immediately archive it on our website.
@@ -60,9 +69,7 @@ export default function About() {
 
         <div className="text-5xl p-4">Design</div>
         <div className="text-xl p-4">
-          Our design is heavily inspired by Neobrutalism which is our way to
-          stray from the homogenization of web design. Having looked through the
-          previous “Times”, we chose this to have more personality.
+          Our design is heavily inspired by Neobrutalism.
         </div>
         <div className="text-xl p-4">Design choices:</div>
         <ul className="text-xl p-4">
