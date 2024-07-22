@@ -20,12 +20,9 @@ export default async function Card(props: Page) {
   const colors = ["bg-red-200","bg-orange-200","bg-amber-200","bg-yellow-200","bg-lime-200","bg-emerald-200","bg-cyan-200","bg-sky-200","bg-violet-200","bg-yellow-200","bg-green-200","bg-teal-200","bg-fuchsia-200","bg-blue-200","bg-indigo-200","bg-purple-200","bg-pink-200","bg-rose-200"];
   const bgColor = colors[Math.floor(Math.random() * colors.length)];
 
-  // set image or fallback to /img/logo.svg
+  // set image to /img/logo.svg or fallback
   const imgExists = fs.existsSync(`${process.cwd()}/public/img/${host}.jpg`);
-  console.log(host, imgExists)
-  const image = imgExists
-    ? `/img/${host}.jpg`
-    : "/img/logo.svg";
+  const image = imgExists ? `/img/${host}.jpg` : "/img/logo.svg";
 
   return (
     <article className="border-black border-2 rounded-md shadow-[5px_5px_0px_rgba(0,0,0,1)] hover:shadow-[8px_8px_0px_rgba(0,0,0,1)]">
