@@ -1,9 +1,9 @@
 import Image from "next/image";
 import Link from "next/link";
-import logos from "../../public/json/logos.json";
+import fs from "fs";
 
 // https://neo-brutalism-ui-library.vercel.app/components/card
-export default function Card(props: Page) {
+export default async function Card(props: Page) {
   // convert time from 1721406522002 to Fri Jul 19 2024
   const time = new Date(props.time).toDateString();
 
@@ -20,6 +20,13 @@ export default function Card(props: Page) {
   const colors = ["bg-red-200","bg-orange-200","bg-amber-200","bg-yellow-200","bg-lime-200","bg-emerald-200","bg-cyan-200","bg-sky-200","bg-violet-200","bg-yellow-200","bg-green-200","bg-teal-200","bg-fuchsia-200","bg-blue-200","bg-indigo-200","bg-purple-200","bg-pink-200","bg-rose-200"];
   const bgColor = colors[Math.floor(Math.random() * colors.length)];
 
+  // set image or fallback to /img/logo.svg
+  const imgExists = fs.existsSync(`${process.cwd()}/public/img/${host}.jpg`);
+  console.log(host, imgExists)
+  const image = imgExists
+    ? `/img/${host}.jpg`
+    : "/img/logo.svg";
+
   return (
     <article className="border-black border-2 rounded-md shadow-[5px_5px_0px_rgba(0,0,0,1)] hover:shadow-[8px_8px_0px_rgba(0,0,0,1)]">
       {/* top half */}
@@ -31,8 +38,7 @@ export default function Card(props: Page) {
             <div className="w-32 h-32 overflow-hidden rounded-full border-black border-2 shadow-[5px_5px_0px_rgba(0,0,0,1)]  hover:shadow-[8px_8px_0px_rgba(0,0,0,1)]">
               <Image
                 className="object-cover"
-                // @ts-ignore
-                src={logos[host] || "/img/logo.svg"}
+                src={image}
                 alt={props.source}
                 width={0}
                 height={0}

@@ -19,16 +19,10 @@ filecoin.io+Why-Filecoin-is-Changing-Storage-Ecosystem.html
 
 ## Image Contribution
 
-To add logos, edit `public/json/logos.json`
+To add logos, in `public/img` add a `.jpg` file with the naming convention
 
-- The key is the host url
-- The value is the base64
-
-```JSON
-{
-    <HOST_URL>: <BASE_64>,
-    "filecoin.io": "data:image/png;base64,iVBORw0KGgo..."
-}
+```
+<HOST_URL>.jpg
 ```
 
 ## How it works
@@ -41,3 +35,5 @@ On build:
   - then return the list as `Page[]`
 - `src/app/page.tsx` will get `Page[]` to display each `Card`
 - `src/components/Card.tsx` will render and style the individual card
+- `<HOST_URL>` is what links `public/html` to `public/img`
+  - for example `public/html/filecoin.io+cool-article.html` will have the logo from `public/img/filecoin.io.jpg`
