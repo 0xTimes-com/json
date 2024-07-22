@@ -1,5 +1,11 @@
 # 0xTimes.com
 
+## Sites
+
+For a basic experience: https://0xtimes.com
+
+For an IPFS experience: https://0xtimes.on-fleek.app
+
 ## Getting Started
 
 ```bash
