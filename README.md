@@ -33,7 +33,7 @@ To add logos, in `public/img` add a `.jpg` file with the naming convention
 
 ## How it works
 
-On build:
+### Website: Nextjs
 
 - A function in `src/utils/getPages.ts` will
   - list all of the `html` files
@@ -44,7 +44,8 @@ On build:
 - `<HOST_URL>` is what links `public/html` to `public/img`
   - for example `public/html/filecoin.io+cool-article.html` will have the logo from `public/img/filecoin.io.jpg`
 
+### Automation: n8n
+
 We're using n8n to automatically transfer all emails to the permanant web
 
-![](https://github.com/user-attachments/assets/f7628911-6d6b-401f-82cb-46df3e038479)
-
+![](https://github.com/user-attachments/assets/4e750f40-1496-4518-b8a6-8f6a472f0a47)
