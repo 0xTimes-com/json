@@ -22,7 +22,7 @@ export default function About() {
           <li>- New Roman Times 😉</li>
         </ul>
 
-        <div className="text-5xl p-4">The 0x</div>
+        <div className="text-5xl p-4">The <code>0</code>x</div>
         <div className="text-xl p-4">
           The prefix <code>0</code>x has a specific meaning in computer science.
           0x is used to indicate a hexadecimal (base-16) number. Hexadecimal
