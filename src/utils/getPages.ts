@@ -6,7 +6,7 @@ export default async function getPages(): Promise<Page[]> {
   return pages
     .map((source) => ({
       source,
-      time: fs.statSync(`public/html/${source}`).mtime.getTime(),
+      time: fs.statSync(`public/html/${source}`).birthtime.getTime(),
     }))
     .sort((a, b) => b.time - a.time)
     .map((file) => {
