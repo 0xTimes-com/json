@@ -1,10 +1,12 @@
 import Nav from "../components/Nav";
 import Card from "../components/Card";
 import Banner from "../components/Banner";
-import getPages from "../utils/getPages";
+import setPages from "../utils/setPages";
+import pages from "../utils/pages.json";
 
 export default async function Home() {
-  const pages = await getPages();
+  await setPages();
+
   return (
     <>
       <Nav />

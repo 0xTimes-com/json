@@ -35,10 +35,12 @@ To add logos, in `public/img` add a `.jpg` file with the naming convention
 
 ### Website: Nextjs
 
-- A function in `src/utils/getPages.ts` will
-  - list all of the `html` files
+- `src/app/page.ts` will call `setPages()`
+- `setPages()` will
+  - get all of the `html` files
   - sort them by reverse chronological order
-  - then return the list as `Page[]`
+  - set pages in `src/utils/pages.json`
+- `page.ts` will loop through `pages.json` to create each page
 - `src/app/page.tsx` will get `Page[]` to display each `Card`
 - `src/components/Card.tsx` will render and style the individual card
 - `<HOST_URL>` is what links `public/html` to `public/img`

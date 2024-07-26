@@ -1,9 +1,11 @@
 import fs from "fs";
 
-// returns a list of pages that's sorted in reverse chronological order for page.tsx
-export default async function getPages(): Promise<Page[]> {
+// loop through html files to update meta.json
+export default async function setPages(): Promise<void> {
   const pages = await fs.readdirSync("public/html");
-  return pages
+
+  // create meta.json
+  const meta = pages
     .map((source) => ({
       source,
       time: fs.statSync(`public/html/${source}`).birthtime.getTime(),
@@ -16,4 +18,10 @@ export default async function getPages(): Promise<Page[]> {
         time: file.time,
       };
     });
+
+  // write to public/json/meta.json
+  return fs.writeFileSync(
+    `./meta.json`,
+    JSON.stringify(meta)
+  );
 }
