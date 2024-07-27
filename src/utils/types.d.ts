@@ -1,5 +1,4 @@
 interface Page {
-  source: string;
-  destination: string;
+  page: string;
   time: number;
 }

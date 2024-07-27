@@ -4,15 +4,18 @@ import fs from "fs";
 
 // https://neo-brutalism-ui-library.vercel.app/components/card
 export default async function Card(props: Page) {
+  // path to html file
+  const link = `html/${props.page}.html`;
+
   // convert time from 1721406522002 to Fri Jul 19 2024
   const time = new Date(props.time).toDateString();
 
-  // parse site.com+hello-world.html to site.com
-  const host = props.source.split("+")[0];
+  // split site.com+hello-world.html to site.com
+  const host = props.page.split("+")[0];
 
-  // parse site.com+hello-world.html to hello world
-  const title = props.source
-    .substring(props.source.indexOf("+") + 1, props.source.indexOf(".html"))
+  // split site.com+hello-world to hello world
+  const title = props.page
+    .split("+")[1]
     .replace(/[/-]/g, " ")
     .trim();
 
@@ -28,7 +31,7 @@ export default async function Card(props: Page) {
     <article className="border-black border-2 rounded-md shadow-[5px_5px_0px_rgba(0,0,0,1)] hover:shadow-[8px_8px_0px_rgba(0,0,0,1)]">
       {/* top half */}
       <figure className="border-black border-b-2">
-        <Link href={props.destination}>
+        <Link href={link}>
           {/* background justify=horizontal items=vertical */}
           <div className={`h-36 flex justify-center items-center ${bgColor}`}>
             {/* rounded image */}
@@ -36,7 +39,7 @@ export default async function Card(props: Page) {
               <Image
                 className="object-cover"
                 src={image}
-                alt={props.source}
+                alt={props.page}
                 width={0}
                 height={0}
                 sizes="100vw"
@@ -55,7 +58,7 @@ export default async function Card(props: Page) {
       <figure className="h-60 bg-slate-100">
         {/* title */}
         <div className="px-6 py-5 h-44">
-          <Link href={props.destination}>
+          <Link href={link}>
             <h1 className="text-3xl hover:underline break-words">
               {title.slice(0, 60)}
               {title.length > 60 ? "..." : ""}
