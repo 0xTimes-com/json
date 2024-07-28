@@ -18,9 +18,9 @@ npm run dev
 To add pages, in `public/html` add a `.html` file with the naming convention
 
 ```
-<HOST_URL>+<Article-Name-With-Hyphens>.html>
+<TIMESTAMP>+<HOST_URL>+<Article-Name-With-Hyphens>.html>
 or
-filecoin.io+Why-Filecoin-is-Changing-Storage-Ecosystem.html
+1722193351391+filecoin.io+Why-Filecoin-is-Changing-Storage-Ecosystem.html
 ```
 
 ## Image Contribution

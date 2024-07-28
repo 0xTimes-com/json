@@ -1,4 +1,6 @@
 interface Page {
-  page: string;
+  href: string;
+  host: string;
+  title: string;
   time: number;
 }
