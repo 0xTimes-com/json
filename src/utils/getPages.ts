@@ -10,6 +10,6 @@ export default async function setPages(): Promise<Page[]> {
       title: page.split("+")[2].split(".html")[0].replace(/\-/g, " ").trim(), // Welcome-to-DIMO
       time: Number(page.split("+")[0]), // 1722193351391
     };
-  });
+  }).sort((a, b) => b.time - a.time);
   return pages;
 }
