@@ -25,6 +25,9 @@ export default async function setPages(): Promise<void> {
     }
   }
 
+  // sort by reverse time
+  pages.sort((a, b) => b.time - a.time);
+
   // update pages.json
   const filePath = path.resolve(process.cwd(), "src/utils", "pages.json");
   return fs.writeFileSync(filePath, JSON.stringify(pages, null, 2));
